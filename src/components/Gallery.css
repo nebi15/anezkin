@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    background-color: #333;
+}
+
+img {
+    max-width: 100%;
+}
+
+img[width] {
+    width: auto;
+}
+
+img[width][height] {
+    height: auto;
+}
+
+h1 {
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery {
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: dense;
+    gap: 0.5rem;
+    max-width: 1500px;
+    padding: 0.8rem;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+
+    /* Upravit šířku dle potřeby */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        /* Na mobilních zařízeních seřazeno směrem dolů */
+    }
+}
+
+.photo {
+    background-color: #c29418;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    margin: 10px;
+    width: 100%;
+    /* Rozdělíme galerii do tří sloupců s mezerami */
+    position: relative;
+}
+
+
+.photo figcaption {
+    /* Styly pro patu obrázku */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5 px;
+    text-align: center;
+}
+
+.photo[data-cert="gold"] {}
+
+.photo[data-cert="plat"] {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(55%);
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.photo:hover img,
+.photo:focus-within img {
+    filter: brightness(100%) grayscale(100%);
+    transform: scale(1.1);
+}
+
+.photo__year {
+    background-color: #221e1f;
+    color: #fff;
+    position: absolute;
+    border-top: 1px solid #fff;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: larger;
+}
+
+.photo .photo__album {
+    opacity: 0;
+    font-style: normal;
+    transition: all .2s ease-in-out;
+    transform-origin: center;
+    font-size: 1.75rem;
+
+    position: absolute;
+    background-color: #ffffff;
+    border-top: 8px solid #221e1f;
+    border-bottom: 8px solid #221e1f;
+    color: #221e1f;
+    width: 200%;
+    /*transform: translate(-50%, -50%) rotate(-32deg);*/
+    transform: translate(-50%, -50%) skew(16deg, -32deg);
+    top: 50%;
+    left: 50%;
+}
+
+.photo[data-cert="plat"] .photo__album {
+    transform: translate(-50%, -50%) skew(8deg, -16deg);
+}
+
+.photo:hover .photo__album,
+.photo:focus-within .photo__album {
+    opacity: 1;
+}
+
+/*zvětšovací okno galerie*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Poloprůhledné pozadí */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Zajišťuje, že bude nad obsahem stránky */
+}
+
+.modal-content {
+    position: flex;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.image-container {
+    flex-grow: 1;
+    /* Mezera mezi šipkami a obrázkem */
+}
+
+.close-button {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    background-color: transparent;
+    color: #f1f1f1;
+    border: none;
+    padding: 1px 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close-button:hover {
+    background-color: #f1f1f1;
+    /* Mění se na světle šedou při přejetí myší */
+    color: black;
+}
+
+.Upload-button {
+    position: relative;
+    top: px;
+    right: px;
+    background-color: transparent;
+    color: #f1f1f1;
+    border: none;
+    padding: 1px 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Upload-button:hover {
+    color: #090909;
+}
+
+.input {
+    display: none;
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Barva pozadí šipek */
+    color: #fff;
+    /* Barva ikon na šipkách */
+    border: none;
+    padding: 10px;
+    /* Velikost vnitřního polštáře (padding) šipek */
+    cursor: pointer;
+    border-radius: 50%;
+    /* Zaoblené rohy pro kulatý tvar šipek */
+    font-size: 20px;
+    /* Velikost ikon na šipkách */
+    margin: 0 10px;
+}
+
+.nav-button :hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Barva pozadí při najetí myší */
+}
+
+.image-preview {
+    max-width: 200px;
+    /* Nastavte maximální šířku náhledu podle vašich preferencí */
+    max-height: 200px;
+    /* Nastavte maximální výšku náhledu podle vašich preferencí */
+    border: 1px solid #ccc;
+    /* Přidejte okraj kolem náhledu */
+    margin-top: 10px;
+    /* Volitelné nastavení mezery mezi náhledem a tlačítkem pro nahrávání */
+}
