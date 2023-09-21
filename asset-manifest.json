@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anezkin/static/css/main.ee64b553.css",
+    "main.js": "/anezkin/static/js/main.d86a817e.js",
+    "index.html": "/anezkin/index.html",
+    "main.ee64b553.css.map": "/anezkin/static/css/main.ee64b553.css.map",
+    "main.d86a817e.js.map": "/anezkin/static/js/main.d86a817e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee64b553.css",
+    "static/js/main.d86a817e.js"
+  ]
+}
