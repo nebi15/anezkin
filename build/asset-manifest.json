@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/firebase-app/static/css/main.ee64b553.css",
-    "main.js": "/firebase-app/static/js/main.2f389a09.js",
-    "index.html": "/firebase-app/index.html",
-    "main.ee64b553.css.map": "/firebase-app/static/css/main.ee64b553.css.map",
-    "main.2f389a09.js.map": "/firebase-app/static/js/main.2f389a09.js.map"
+    "main.css": "/anezkin/static/css/main.ee64b553.css",
+    "main.js": "/anezkin/static/js/main.d86a817e.js",
+    "index.html": "/anezkin/index.html",
+    "main.ee64b553.css.map": "/anezkin/static/css/main.ee64b553.css.map",
+    "main.d86a817e.js.map": "/anezkin/static/js/main.d86a817e.js.map"
   },
   "entrypoints": [
     "static/css/main.ee64b553.css",
-    "static/js/main.2f389a09.js"
+    "static/js/main.d86a817e.js"
   ]
 }
